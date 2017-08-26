@@ -1,52 +1,51 @@
-### github µØÖ·£º[´«ËÍÃÅ](https://github.com/GeXyu/mvc2)
-2	Ç°Á½ÌìĞ´ÁË¼¸¸ö×¢½âºÍ´¦ÀíÆ÷µÄDmoe,È»ºó·¢ÏÖ¿ÉÒÔĞ´Ò»¸öĞ¡¿ò¼Ü¡£¸Ğ¾õSpringmvc±È½ÏºÏÊÊ£¬Ö®Ç°Ò²¿´¹ı²¿·ÖÔ´Âë£¬È»ºó¾Í¶¯ÊÖ¸ãÁËÒ»¸ö¡£
-3	´úÂëÃ»ÓĞ³éÈ¡£¬Éè¼ÆÒ²ÊÇÒ»ËúºıÍ¿(±È½Ï²Ë£¬²»»áÉè¼Æ)£¬´úÂë²»ÓÅÑÅ¡£  
-4	ÊµÏÖÁË¼¸¸öºËĞÄ¹¦ÄÜ£º×¢½âÊ½ÉùÃ÷¿ØÖÆÀà£¬¼òµ¥µÄÊı¾İ°ó¶¨£¬·µ»Øjsosn£¬Ö§³ÖÊ¹ÓÃmodel´«µİÊı¾İ£¬Resultf·ç¸ñµÄÌø×ªºÍÖØ¶¨Ïò£¨×¼±¸Ìí¼ÓÎÄ¼şÉÏ´«¹¦ÄÜ£©¡£  
-5	Èç¹ûÓĞÖ¾Ö®Ê¿¿ÉÒÔforkÒ»·İ Ìí¼Ó¹¦ÄÜ,ĞŞ¸´bug¡£ÕâÀïĞ»¹ıÁË£¡  
-6	### Ô­Àí 
-7	1£¬Ê×ÏÈ³õÊ¼»¯µÄÊ±ºòÉ¨ÃèÖ¸¶¨µÄ°ü£¬È»ºóÉ¨ÃèÀàÉÏµÄ×¢½â£¬Éú³ÉÒ»¸ömap¡£°Ñ×¢½âÉÏµÄÖµÎªkey,JavaÀàµÄÈ«¶¨ÏŞÃûÎªvalue¡£  
-8	2£¬É¨Ãè·½·¨ÉÏÃæµÄÓ³Éä£¬Î¬»¤Ó³Éämap,°Ñmapping×¢½âµÄÖµÎªkey,Ö´ĞĞµÄ·½·¨Îªvalue¡£³õÊ¼»¯Íê³É£¡  
-9	3£¬È»ºó¸ù¾İºËĞÄservletÈ¥·Ö·¢ÇëÇó£¬È»ºó½âÎö·µ»Ø×Ö·û´®£¬½øĞĞÌø×ª»òÕßÊÇÖØ¶¨Ïò¡£  
-10	¾ßÌåµÄË¼Â·¾ÍÊÇÕâÑù  
-11	Èç¹ûÓĞÖ¾Ö®Ê¿¿ÉÒÔforkÒ»·İ Ìí¼Ó¹¦ÄÜ,ĞŞ¸´bug.  
-12	Áô¸öÓÊÏä,ÓÃÓÚ½»Á÷ [gexyuzz@gmail.com](gexyuzz@gmail.com) !²»ÊÇ¹ã¸æ£¡£¡£¡  
-2 months ago @GeXyu Update README.md	
-13	#### ´ò°üºÃÁË   [Download](http://images.zzcode.cn/mvc2.jar)¿ÉÒÔÖ±½ÓÊ¹ÓÃÀ²¡«
-14	ÓÃµ½µÄjar°ü:[bcel-6.0.jar](http://mvnrepository.com/artifact/org.apache.bcel/bcel) [commons-beanutils.jar](http://mvnrepository.com/artifact/commons-beanutils/commons-beanutils/1.9.3)  [json-20170516.jar](http://mvnrepository.com/artifact/org.json/json/20160810)
-15	ÈÕÖ¾×é¼ş: [logback](http://mvnrepository.com/artifact/ch.qos.logback/logback-core/1.1.7) 
-2 months ago @GeXyu Update README.md	
-16	### ÄÇÃ´ÔõÃ´Ê¹ÓÃÄØ£¿
-17	
-2 months ago @GeXyu readme	
-18	Ê×ÏÈÔÚactionÀàÌí¼Ó@Action×¢½â,ÔÚ·½·¨Ìí¼Ó@Mapping×¢½â.
-19	```java
-20	@Action("/index")
-21	public class Controller {
-22		@Mapping(value="/hello",RequestType=Type.get)
-23		public String sayHello(Model model){
-24			model.setParameter("root", "Hello");
-25			return "welcome";
-26		}
-27	}
-28	
-29	```
-30	Ëü»áÌø×ªµ½/WEB-INF/jspÏÂµÄwelcome.jsp(ÕâÀïÎÒĞ´ËÀµÄ,Ç°×º/WEB-INF/jsp.ºó×º.jsp)
-31	```jsp
-32	<%@ page language="java" contentType="text/html; charset=UTF-8"
-33	    pageEncoding="UTF-8"%>
-34	<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-35	<html>
-36	<head>
-37	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-38	<title>Insert title here</title>
-39	</head>
-40	<body>
-41	${root }
-42	</body>
-43	</html>
-44	```
-2 months ago @GeXyu 03	
-45	È»ºóÔÚÏîÄ¿µÄweb.xmlÎÄ¼şÌí¼ÓºËĞÄservlet
+### github åœ°å€ï¼š[ä¼ é€é—¨](https://github.com/GeXyu/mvc2)
+å‰ä¸¤å¤©å†™äº†å‡ ä¸ªæ³¨è§£å’Œå¤„ç†å™¨çš„Dmoe,ç„¶åå‘ç°å¯ä»¥å†™ä¸€ä¸ªå°æ¡†æ¶ã€‚æ„Ÿè§‰Springmvcæ¯”è¾ƒåˆé€‚ï¼Œä¹‹å‰ä¹Ÿçœ‹è¿‡éƒ¨åˆ†æºç ï¼Œç„¶åå°±åŠ¨æ‰‹æäº†ä¸€ä¸ªã€‚
+ä»£ç æ²¡æœ‰æŠ½å–ï¼Œè®¾è®¡ä¹Ÿæ˜¯ä¸€å¡Œç³Šæ¶‚(æ¯”è¾ƒèœï¼Œä¸ä¼šè®¾è®¡)ï¼Œä»£ç ä¸ä¼˜é›…ã€‚  
+	å®ç°äº†å‡ ä¸ªæ ¸å¿ƒåŠŸèƒ½ï¼šæ³¨è§£å¼å£°æ˜æ§åˆ¶ç±»ï¼Œç®€å•çš„æ•°æ®ç»‘å®šï¼Œè¿”å›jsosnï¼Œæ”¯æŒä½¿ç”¨modelä¼ é€’æ•°æ®ï¼ŒResultfé£æ ¼çš„è·³è½¬å’Œé‡å®šå‘ï¼ˆå‡†å¤‡æ·»åŠ æ–‡ä»¶ä¸Šä¼ åŠŸèƒ½ï¼‰ã€‚  
+	å¦‚æœæœ‰å¿—ä¹‹å£«å¯ä»¥forkä¸€ä»½ æ·»åŠ åŠŸèƒ½,ä¿®å¤bugã€‚è¿™é‡Œè°¢è¿‡äº†ï¼  
+	### åŸç† 
+1ï¼Œé¦–å…ˆåˆå§‹åŒ–çš„æ—¶å€™æ‰«ææŒ‡å®šçš„åŒ…ï¼Œç„¶åæ‰«æç±»ä¸Šçš„æ³¨è§£ï¼Œç”Ÿæˆä¸€ä¸ªmapã€‚æŠŠæ³¨è§£ä¸Šçš„å€¼ä¸ºkey,Javaç±»çš„å…¨å®šé™åä¸ºvalueã€‚  
+2ï¼Œæ‰«ææ–¹æ³•ä¸Šé¢çš„æ˜ å°„ï¼Œç»´æŠ¤æ˜ å°„map,æŠŠmappingæ³¨è§£çš„å€¼ä¸ºkey,æ‰§è¡Œçš„æ–¹æ³•ä¸ºvalueã€‚åˆå§‹åŒ–å®Œæˆï¼  
+3ï¼Œç„¶åæ ¹æ®æ ¸å¿ƒservletå»åˆ†å‘è¯·æ±‚ï¼Œç„¶åè§£æè¿”å›å­—ç¬¦ä¸²ï¼Œè¿›è¡Œè·³è½¬æˆ–è€…æ˜¯é‡å®šå‘ã€‚  
+å…·ä½“çš„æ€è·¯å°±æ˜¯è¿™æ ·  
+å¦‚æœæœ‰å¿—ä¹‹å£«å¯ä»¥forkä¸€ä»½ æ·»åŠ åŠŸèƒ½,ä¿®å¤bug.  
+ç•™ä¸ªé‚®ç®±,ç”¨äºäº¤æµ [gexyuzz@gmail.com](gexyuzz@gmail.com) !ä¸æ˜¯å¹¿å‘Šï¼ï¼ï¼  
+
+#### æ‰“åŒ…å¥½äº†   [Download](http://images.zzcode.cn/mvc2.jar)å¯ä»¥ç›´æ¥ä½¿ç”¨å•¦ï½
+ç”¨åˆ°çš„jaråŒ…:[bcel-6.0.jar](http://mvnrepository.com/artifact/org.apache.bcel/bcel) [commons-beanutils.jar](http://mvnrepository.com/artifact/commons-beanutils/commons-beanutils/1.9.3)  [json-20170516.jar](http://mvnrepository.com/artifact/org.json/json/20160810)
+æ—¥å¿—ç»„ä»¶: [logback](http://mvnrepository.com/artifact/ch.qos.logback/logback-core/1.1.7) 
+
+### é‚£ä¹ˆæ€ä¹ˆä½¿ç”¨å‘¢ï¼Ÿ
+
+é¦–å…ˆåœ¨actionç±»æ·»åŠ @Actionæ³¨è§£,åœ¨æ–¹æ³•æ·»åŠ @Mappingæ³¨è§£.
+```java
+@Action("/index")
+public class Controller {
+		@Mapping(value="/hello",RequestType=Type.get)
+		public String sayHello(Model model){
+			model.setParameter("root", "Hello");
+			return "welcome";
+		}
+	}
+	
+```
+å®ƒä¼šè·³è½¬åˆ°/WEB-INF/jspä¸‹çš„welcome.jsp(è¿™é‡Œæˆ‘å†™æ­»çš„,å‰ç¼€/WEB-INF/jsp.åç¼€.jsp)
+```jsp
+	<%@ page language="java" contentType="text/html; charset=UTF-8"
+	    pageEncoding="UTF-8"%>
+	<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+	<html>
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Insert title here</title>
+	</head>
+	<body>
+	${root }
+	</body>
+	</html>
+	```
+
+45	ç„¶ååœ¨é¡¹ç›®çš„web.xmlæ–‡ä»¶æ·»åŠ æ ¸å¿ƒservlet
 46	```xml
 47	<?xml version="1.0" encoding="UTF-8"?>
 48	<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
@@ -57,10 +56,10 @@
 53		<servlet>
 54			<servlet-name>main</servlet-name>
 55			<servlet-class>cn.xiuyu.servlet.MainServlet</servlet-class>
-56			<!-- ÉèÖÃ×îÏÈÆô¶¯±£Ö¤³õÊ¼»¯ -->
+56			<!-- è®¾ç½®æœ€å…ˆå¯åŠ¨ä¿è¯åˆå§‹åŒ– -->
 57			<load-on-startup>1</load-on-startup>
 58			<init-param>
-59				<!-- ×Ô¶¨É¨ÃèµÄ°ü -->
+59				<!-- è‡ªå®šæ‰«æçš„åŒ… -->
 60				<param-name>package</param-name>
 61				<param-value>cn.xiuyu</param-value>
 62			</init-param>
@@ -73,54 +72,54 @@
 69	
 70	```
 2 months ago @GeXyu Update README.md	
-71	È»ºó·ÃÎÊµØÖ·£ºhttp:localhost:8080/${ÏîÄ¿Ãû}/index/hello  
-72	#### ÆäÊµÊ¹ÓÃÉÏspringmvc²î²»¶à£¬¾ÍÕâÑù¡£ ÓĞÊ²Ã´bug¿ÉÒÔ¸æËßÎÒ°¢£¡ ¸æËßÎÒ°¢ £¡ ÎÒ°¢£¡ °¢£¡£¡£¡
+71	ç„¶åè®¿é—®åœ°å€ï¼šhttp:localhost:8080/${é¡¹ç›®å}/index/hello  
+72	#### å…¶å®ä½¿ç”¨ä¸Šspringmvcå·®ä¸å¤šï¼Œå°±è¿™æ ·ã€‚ æœ‰ä»€ä¹ˆbugå¯ä»¥å‘Šè¯‰æˆ‘é˜¿ï¼ å‘Šè¯‰æˆ‘é˜¿ ï¼ æˆ‘é˜¿ï¼ é˜¿ï¼ï¼ï¼
 2 months ago @GeXyu readme	
 73	
-74	### ÖØ¶¨ÏòºÍ×ª·¢
+74	### é‡å®šå‘å’Œè½¬å‘
 75	```java
-76		//postÇëÇó
+76		//postè¯·æ±‚
 77		@Mapping(value="/post",RequestType=Type.post)
 78		public String post(){
-79			System.out.println("---½øÈëµ½ÁËpostÇëÇó --");
+79			System.out.println("---è¿›å…¥åˆ°äº†postè¯·æ±‚ --");
 80			return "redirect:/index/get";
 81		}
-82		//getÇëÇóvalue  ²»±¸×¢Ä¬ÈÏÎªget
+82		//getè¯·æ±‚value  ä¸å¤‡æ³¨é»˜è®¤ä¸ºget
 83		@Mapping(value="/get",RequestType=Type.get)
 84		public String get(Model model){
-85			//model Ö»Ö§³Ö´«Öµ È¡Öµ
+85			//model åªæ”¯æŒä¼ å€¼ å–å€¼
 86			model.setParameter("key", "value");
-87			System.out.println("---½øÈëµ½ÁËgetÇëÇó --");
+87			System.out.println("---è¿›å…¥åˆ°äº†getè¯·æ±‚ --");
 88			return "welcome";
 89		}
 90	```
-91	### ½ÓÊÜµ¥×Ö¶Î ¿ÉÒÔ´«Èëmodel¶ÔÏó£¨½öÄÜ´«Êä¶ÔÏó£©
+91	### æ¥å—å•å­—æ®µ å¯ä»¥ä¼ å…¥modelå¯¹è±¡ï¼ˆä»…èƒ½ä¼ è¾“å¯¹è±¡ï¼‰
 92	```java
-93		//½ÓÊÜµ¥×Ö¶Î
+93		//æ¥å—å•å­—æ®µ
 94		@Mapping(value="/one",RequestType=Type.post)
 95		public String one(String name,Model model){
-96			//model Ö»Ö§³Ö´«Öµ È¡Öµ
+96			//model åªæ”¯æŒä¼ å€¼ å–å€¼
 97			model.setParameter("key", name);
 98			return "welcome";
 99		}
 100	```
-101	### ·â×°ÊµÌå
+101	### å°è£…å®ä½“
 102	```java
-103		//·â×°ÊµÌå
+103		//å°è£…å®ä½“
 104		@Mapping(value="/object",RequestType=Type.post)
 105		public String object(User u,Model model){
-106			//model Ö»Ö§³Ö´«Öµ È¡Öµ
+106			//model åªæ”¯æŒä¼ å€¼ å–å€¼
 107			model.setParameter("key", u.getName() + "--" + u.getPassword());
 108			return "welcome";
 109		}
 110	```
-111	### ·µ»Øjson  ĞèÒª·µ»Øjson¶ÔÏó²¢ÇÒÔÚ·½·¨ÉÏÌí¼Ó@Json×¢½â
+111	### è¿”å›json  éœ€è¦è¿”å›jsonå¯¹è±¡å¹¶ä¸”åœ¨æ–¹æ³•ä¸Šæ·»åŠ @Jsonæ³¨è§£
 112	```java
-113	//·µ»Øjson
+113	//è¿”å›json
 114		@Mapping(value="/json",RequestType=Type.get)
 115		@Json
 116		public User json(String name,String password,Model model){
-117			//model Ö»Ö§³Ö´«Öµ È¡Öµ
+117			//model åªæ”¯æŒä¼ å€¼ å–å€¼
 118			User u = new User();
 119			u.setName(name);
 120			u.setPassword(password);
@@ -128,21 +127,21 @@
 122			return u;
 123		}
 124	```
-125	### ÉÏ´«ÎÄ¼ş£¨Ä¿Ç°½öÄÜµ¥ÎÄ¼şÉÏ´«£©£¬ĞèÒª°Ñ±íµ¥ÉèÖÃÎªenctype="multipart/form-data"£¬È»ºóÔÚaction·½·¨Ìí¼ÓFileEntityÊµÌå½ÓÊÜÎÄ¼ş£¬ÉÏ´«µ½/WEB-INF/upload/*/*ÎÄ¼ş¼ĞÏÂ(*ÎªËã·¨Éú³É)
+125	### ä¸Šä¼ æ–‡ä»¶ï¼ˆç›®å‰ä»…èƒ½å•æ–‡ä»¶ä¸Šä¼ ï¼‰ï¼Œéœ€è¦æŠŠè¡¨å•è®¾ç½®ä¸ºenctype="multipart/form-data"ï¼Œç„¶ååœ¨actionæ–¹æ³•æ·»åŠ FileEntityå®ä½“æ¥å—æ–‡ä»¶ï¼Œä¸Šä¼ åˆ°/WEB-INF/upload/*/*æ–‡ä»¶å¤¹ä¸‹(*ä¸ºç®—æ³•ç”Ÿæˆ)
 126	```html
 127	<form action="${pageContext.request.contextPath }/index/uoload" method="post" enctype="multipart/form-data">
 128		<input type="file" name="testFile">
 129		<input type="submit" value="file">
 130	</form>
 131	```
-132	action·½·¨
+132	actionæ–¹æ³•
 133	```java
-134	//ÉÏ´«ÎÄ¼ş
+134	//ä¸Šä¼ æ–‡ä»¶
 135		@Mapping(value="/uoload",RequestType=Type.post)
 136		public String uoload(FileEntity entity,Model model){
-137			//model Ö»Ö§³Ö´«Öµ È¡Öµ
+137			//model åªæ”¯æŒä¼ å€¼ å–å€¼
 138			model.setParameter("key", entity.getPath() + " " +entity.getNewName());
 139			return "welcome";
 140		}
 141	```
-142	¿ÉÒÔÔÚÎÄ¼şÉÏ´«¹ı³Ì½ÓÊÕÎÄ¼şÉÏ´«×´Ì¬£¬·µ»ØÒ»¸öjson¶ÔÏó(·â×°ÎÄ¼ş´óĞ¡`pContentLength`ºÍÒÑÉÏ´«ÎÄ¼ş`pBytesRead`)
+142	å¯ä»¥åœ¨æ–‡ä»¶ä¸Šä¼ è¿‡ç¨‹æ¥æ”¶æ–‡ä»¶ä¸Šä¼ çŠ¶æ€ï¼Œè¿”å›ä¸€ä¸ªjsonå¯¹è±¡(å°è£…æ–‡ä»¶å¤§å°`pContentLength`å’Œå·²ä¸Šä¼ æ–‡ä»¶`pBytesRead`)
